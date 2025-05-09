@@ -15,13 +15,13 @@ class Program
         DisplayResult(userName, squaredNumber);
     }
 
-    //Welcome message function
+    //Welcome message function 1
     static void WelcomeMessage()
     {
         Console.WriteLine("Welcome to the program!");
     }
 
-    //ask for the name function
+    //ask for the name function 2
     static string PromptName()
     {
         Console.Write("Please enter your name: ");
@@ -30,7 +30,7 @@ class Program
         return name;
     }
 
-    //ask for a number
+    //ask for a number function 3
     static int PromptNumber()
     {
         Console.Write("Please enter your favorite number: ");
@@ -39,14 +39,14 @@ class Program
         return number;
     }
 
-    //square the number
+    //square the number function 4
     static int SquaredNumber(int number)
     {
         int square = number * number;
         return square;
     }
 
-    //results to print
+    //results to print function 5
     static void DisplayResult(string name, int square)
     {
         Console.WriteLine($"{name}, the square of your number is {square}");
