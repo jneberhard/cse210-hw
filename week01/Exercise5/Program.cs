@@ -1,9 +1,55 @@
 using System;
+using System.Collections.Specialized;
+using System.Configuration.Assemblies;
+using System.Reflection.Metadata.Ecma335;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise5 Project.");
+        //call these 5 functions
+        WelcomeMessage();
+        string userName = PromptName();
+        int userNumber = PromptNumber();
+        int squaredNumber = SquaredNumber(userNumber);
+        DisplayResult(userName, squaredNumber);
     }
+
+    //Welcome message function
+    static void WelcomeMessage()
+    {
+        Console.WriteLine("Welcome to the program!");
+    }
+
+    //ask for the name function
+    static string PromptName()
+    {
+        Console.Write("Please enter your name: ");
+        string name = Console.ReadLine();
+
+        return name;
+    }
+
+    //ask for a number
+    static int PromptNumber()
+    {
+        Console.Write("Please enter your favorite number: ");
+        int number = int.Parse(Console.ReadLine());
+
+        return number;
+    }
+
+    //square the number
+    static int SquaredNumber(int number)
+    {
+        int square = number * number;
+        return square;
+    }
+
+    //results to print
+    static void DisplayResult(string name, int square)
+    {
+        Console.WriteLine($"{name}, the square of your number is {square}");
+    }
+
 }
