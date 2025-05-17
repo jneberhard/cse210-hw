@@ -30,7 +30,7 @@ public class Journal
     {
         if (File.Exists(file))
         {
-            try   //   source for try/catch   https://www.w3schools.com/cs/cs_exceptions.php   I had a index outsieof bounds error
+            try   //   source for try/catch   https://www.w3schools.com/cs/cs_exceptions.php   I had a index outside of bounds error
             {
                 string[] lines = File.ReadAllLines(file);
                 lines = lines.Skip(1).ToArray(); // where I found skip header row:  https://stackoverflow.com/questions/43048819/skip-first-line-using-system-io-file-readalllinesfil-in-c-sharp
@@ -38,7 +38,7 @@ public class Journal
 
                 foreach (string line in lines)
                 {
-                    string[] parts = line.Split("|");   // making the delimiter to | instead of comma because commas can be in the responses
+                    string[] parts = line.Split("|");   // making the delimiter to | instead of comma because commas can be in the responses - for a csv file with comma delimiter may create problems.
 
                     string date = parts[0];
                     string prompt = parts[1];
@@ -46,7 +46,7 @@ public class Journal
                     _entries.Add(new Entry { _date = date, _promptText = prompt, _entryText = response});
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine($"There was an error loading the file {file}.");
             }
