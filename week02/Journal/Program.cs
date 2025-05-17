@@ -24,51 +24,58 @@ class Program
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");  //asking for a number
             string userResponse = Console.ReadLine();
+
+            if (!int.TryParse(userResponse, out inputNumber)) // checking to see if it is not an integer - https://stackoverflow.com/questions/1752499/c-sharp-testing-to-see-if-a-string-is-an-integer
+            {
+                Console.WriteLine("\nInvalid input. Please ender a number.");
+                continue;  //will skip the rest of the loop and try again
+
+            }
             inputNumber = int.Parse(userResponse);
 
             if (inputNumber == 1)  //checks to see if it is this number selected
-            {
-                string prompt = generatePrompt.GetRandomPrompt();
-                Console.WriteLine(prompt);
-                Console.Write("> ");
-                string journalEntry = Console.ReadLine();
+                {
+                    string prompt = generatePrompt.GetRandomPrompt();
+                    Console.WriteLine(prompt);
+                    Console.Write("> ");
+                    string journalEntry = Console.ReadLine();
 
-                DateTime currentTime = DateTime.Now;    // got this information from the lesson material -- very nice
-                string dateTime = currentTime.ToLongDateString();
-                journal.AddEntry(dateTime, prompt, journalEntry);
+                    DateTime currentTime = DateTime.Now;    // got this information from the lesson material -- very nice
+                    string dateTime = currentTime.ToLongDateString();
+                    journal.AddEntry(dateTime, prompt, journalEntry);
 
-            }
-            else if (inputNumber == 2)
-            {
-                journal.DisplayAll();
-            }
-            else if (inputNumber == 3)
-            {
-                Console.Write("\nWhat is the name of the file to load? ");
-                string file = Console.ReadLine();
-                journal.LoadFromFile(file);
+                }
+                else if (inputNumber == 2)
+                {
+                    journal.DisplayAll();
+                }
+                else if (inputNumber == 3)
+                {
+                    Console.Write("\nWhat is the name of the file to load? ");
+                    string file = Console.ReadLine();
+                    journal.LoadFromFile(file);
 
-            }
-            else if (inputNumber == 4)
-            {
-                Console.Write("\nWhat is the name of the file to save? ");
-                string filename = Console.ReadLine();
-                journal.SaveToFile(filename);
+                }
+                else if (inputNumber == 4)
+                {
+                    Console.Write("\nWhat is the name of the file to save? ");
+                    string filename = Console.ReadLine();
+                    journal.SaveToFile(filename);
 
-                Console.WriteLine($"Your file has been saved as {filename}.");
+                    Console.WriteLine($"Your file has been saved as {filename}.");
 
-            }
+                }
 
 
-            else if (inputNumber == 5)
-            {
-                Console.WriteLine("Thank you. Goodbye");
-                break;
-            }
-            else
-            {
-                Console.WriteLine("Invalid number. Please enter a correct number.");
-            }
+                else if (inputNumber == 5)
+                {
+                    Console.WriteLine("Thank you. Goodbye");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid number. Please enter a correct number.");
+                }
         }
 
     }

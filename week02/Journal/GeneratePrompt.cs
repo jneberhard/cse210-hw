@@ -7,7 +7,7 @@ public class GeneratePrompt
 
     public GeneratePrompt()
     {
-        _prompts = new List<string>
+        _prompts = new List<string>  //could easily add more prompts here
         {
             "Who was the most interesting person I talked with today?",
             "What was the favorite thing I ate today?",

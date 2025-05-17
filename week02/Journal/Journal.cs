@@ -13,7 +13,7 @@ public class Journal
             entry.Display();
         }
     }
-    public void SaveToFile(string filename)
+    public void SaveToFile(string filename)  // saving variable 'filename', taken from user input.
     {
         using (StreamWriter writer = new StreamWriter(filename))
         {
@@ -26,7 +26,7 @@ public class Journal
         }
 
     }
-    public void LoadFromFile(string file)
+    public void LoadFromFile(string file) // the name here is file - taken from input string.
     {
         if (File.Exists(file))
         {
@@ -46,7 +46,7 @@ public class Journal
                     _entries.Add(new Entry { _date = date, _promptText = prompt, _entryText = response});
                 }
             }
-            catch (Exception)
+            catch (Exception) // in reading online, you could put a variable after the word Exception to call it to have a different message.
             {
                 Console.WriteLine($"There was an error loading the file {file}.");
             }
