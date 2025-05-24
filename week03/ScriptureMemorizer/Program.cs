@@ -21,12 +21,12 @@ class Program
             "if it be wisdom in God that ye should read them, that ye would " +
             "remember how merciful the Lord hath been unto the children of men, " +
             "from the creation of Adam even down until the time that ye shall " +
-            "receive these things, and ponder it in your hearts. And when ye shall " +
+            "receive these things, and ponder it in your hearts. \r\n\nAnd when ye shall " +     //add \rand\n to create a blank line to separate the verses
             "receive these things, I would exhort you that ye would ask God, the " +
             "Eternal Father, in the name of Christ, if these things are not true; " +
             "and if ye shall ask with a sincere heart, with real intent, having faith in Christ, " +
             "he will manifest the truth of it unto you, by the power of the Holy Ghost. " +
-            "And by the power of the Holy Ghost ye may know the truth of all things."
+            "\n\r\nAnd by the power of the Holy Ghost ye may know the truth of all things."
         ));
 
         scriptures.Add(new Scripture(
@@ -41,20 +41,20 @@ class Program
         while (!scripture.IsCompletelyHidden())
         {
             scripture.DisplayText();
-            Console.WriteLine("Press the enter key to continue or type quit");
+            Console.Write("Press the enter key to continue or type quit: ");
             string input = Console.ReadLine();
 
             if (input.ToLower() == "quit")   // checking the user input -- stopping if quit is typed or else it will go on
             {
-                Console.WriteLine("Thank You");
+                Console.WriteLine("Thank You");  // give a thank you
                 return;
             }
 
             scripture.HideRandomWords(3);    // change the number in ( ) to decide how many words to omit each time
         }
-
         scripture.DisplayText();
-        Console.WriteLine("There are no more words to hide. Program ended.");
-    }
+        Console.WriteLine("You are done. The program will now exit"); //quitting now explanation
+        return;
+  }
 }
 

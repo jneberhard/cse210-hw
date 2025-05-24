@@ -14,9 +14,11 @@ public class Scripture
         // then for each word in array (w) creates new word(w) object to a list of words
     }
 
-    public void HideRandomWords(int numberToHide) //will only hide words not already hidden - input is the number of words to hide
+    public void HideRandomWords(int numberToHide) //will only hide words not already hidden - input is the number of words to hide taken from Program.cs
     {
         var visibleWords = _words.Where(w => !w.IsHidden()).ToList(); //makes sure it selects only words that aren't hidden and makes that list
+        int wordsToHide = Math.Min(numberToHide, visibleWords.Count);   //so it doesn't try to hide more words than available
+
         for (int i = 0; i < numberToHide && visibleWords.Count > 0; i++)   // for loop -- will stop if there aren't any words left to hide
         {
             int index = _random.Next(visibleWords.Count); // picks random index from words
