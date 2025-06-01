@@ -19,9 +19,9 @@ class Program
         order2.AddProduct(new Product("1 Oz Silver Round, Generic", "AU1OZGEN", 36.59, 6));
 
 
-       Console.WriteLine(order1.PackingLabel());
-        Console.WriteLine(order1.ShippingLabel());
-        Console.WriteLine($"Total Price: ${order1.GetTotalCost():F2}\n");
+        Console.WriteLine(order1.PackingLabel());  // print packing label
+        Console.WriteLine(order1.ShippingLabel());   //printing shipping label
+        Console.WriteLine($"Total Price: ${order1.GetTotalCost():F2}\n");   //printing total price
         Console.WriteLine("NEXT ORDER");
         Console.WriteLine(order2.PackingLabel());
         Console.WriteLine(order2.ShippingLabel());
