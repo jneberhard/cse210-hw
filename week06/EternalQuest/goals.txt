@@ -1,0 +1,6 @@
+540
+SimpleGoal|Eat Lunch|eat healthy lunch|30|True
+EternalGoal|Read Scripture today|read at least 10 minutes|30
+ChecklistGoal|Go to the temple|Attend weekly this month|200|4|300|1
+COMPLETED
+SimpleGoal|Website|Complete website homework|250|True

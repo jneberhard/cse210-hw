@@ -1,0 +1,7 @@
+515
+SimpleGoal|Get website done|Complete this week's homework for website class|250|True
+SimpleGoal|Yardwork|Trim Lilac Bushes|50|True
+COMPLETED
+SimpleGoal|Eat Lunch|eat a good lunch|40|True
+ChecklistGoal|Go to temple|Make a weekly visit to the temple|50|4|300|1
+SimpleGoal|Yardwork|Weed grapes and raspberries|50|False
