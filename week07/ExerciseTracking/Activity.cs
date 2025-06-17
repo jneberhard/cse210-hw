@@ -18,7 +18,7 @@ public abstract class Activity
     public DateTime Date => _date;
     public int Minutes => _minutes;
 
-    public abstract double GetDistance();  // using abstract because this is the parent class
+    public abstract double GetDistance();  // using abstract because this is the base (parent) class
     public abstract double GetSpeed();
     public abstract double GetPace();
 
