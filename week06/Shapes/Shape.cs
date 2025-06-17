@@ -20,10 +20,5 @@ public abstract class Shape
         _color = color;
     }
 
-    //public virtual double GetArea()
-    //{
-    //    return 0;
-    //}
-
     public abstract double GetArea();
 }
