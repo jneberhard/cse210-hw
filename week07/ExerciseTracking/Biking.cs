@@ -21,11 +21,4 @@ public class Biking : Activity
     {
         return 60.00 / _speed;
     }
-
-    
-
-
-
-
-
 }

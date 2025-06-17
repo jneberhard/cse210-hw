@@ -21,5 +21,4 @@ public class Running : Activity
     {
         return (Minutes / _distance);
     }
-
 }
